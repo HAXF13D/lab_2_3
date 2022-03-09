@@ -9,8 +9,10 @@ if __name__ == "__main__":
     with open("text.txt", "r", encoding="UTF-8") as fin:
         for line in fin:
             words = line.lower()
-            if re.findall(r'\w*ie\w*', words) or re.findall(r'\w*ei\w*', words):
-                if re.findall(r'\w*[^c]ie\w*', words) or re.findall(r'\w*cei\w*', words):
+            if re.findall(r'\w*ie\w*', words) \
+                    or re.findall(r'\w*ei\w*', words):
+                if re.findall(r'\w*[^c]ie\w*', words) \
+                        or re.findall(r'\w*cei\w*', words):
                     ie_words = re.findall(r'\w*[^c]ie\w*', words)
                     ei_words = re.findall(r'\w*cei\w*', words)
                     rules += ie_words + ei_words
